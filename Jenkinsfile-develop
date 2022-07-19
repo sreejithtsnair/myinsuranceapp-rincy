@@ -28,7 +28,7 @@ pipeline {
         }     
         stage('Create image') {
             steps {
-                echo 'creating image...'
+                echo 'creating image....'
                 sh 'docker build -t risunmyinsuranceapp.azurecr.io/myinsuranceapp:v3 -f Dockerfile .'
             }
         }
