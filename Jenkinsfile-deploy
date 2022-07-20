@@ -24,7 +24,7 @@ pipeline {
         stage('Acceptance tests') {
             steps {
                 echo 'Acceptance...'
-                sh 'python3 -m unittest discover -s tests/acceptance-request -v'
+                sh 'python3 -m unittest discover -s tests/acceptance-flask -v'
             }
         }     
         stage('Create image') {
@@ -36,7 +36,7 @@ pipeline {
         } 
         stage('Publish image') {
             steps {
-                echo 'pushing image...'
+                echo 'pushing image..'
                 withDockerRegistry([ credentialsId: "docker-hub-credentials", url: "" ]) {
                     sh 'docker push 618383339/risun_myinsuranceapp'
                 }
@@ -59,7 +59,7 @@ pipeline {
         /*stage('External acceptance tests') {
             steps{
                 echo 'External acceptance tests...'
-                sh 'python3 -m unittest discover -s tests/acceptance-request -v'
+                sh 'python3 -m unittest discover -s tests/acceptance-ext -v'
             }
         }*/
     }
