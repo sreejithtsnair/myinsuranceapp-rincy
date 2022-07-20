@@ -19,4 +19,4 @@ spec:
         image: 618383339/risun_myinsuranceapp
         ports:
         - name: http
-          containerPort: 8080
+          containerPort: 5000
