@@ -31,7 +31,7 @@ pipeline {
             steps {
                 echo 'creating image...'
                 sh 'docker build -t 618383339/risun_myinsuranceapp -f Dockerfile .'
-                // sh 'docker build -t risunmyinsuranceapp.azurecr.io/myinsuranceapp:v3 -f Dockerfile . .'
+                //sh 'docker build -t risunmyinsuranceapp.azurecr.io/myinsuranceapp:v3 -f Dockerfile . .'
             }
         } 
         stage('Publish image') {
